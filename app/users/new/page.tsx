@@ -2,7 +2,8 @@ import React from 'react'
 
 interface User {
     id: number,
-    name: string
+    name: string,
+    email: string
 }
 const NewUserPage = async () => {
 
@@ -13,9 +14,19 @@ const NewUserPage = async () => {
   return (
     <>
         <h1>Users</h1>
-        <ul>
-            <li>{users.map(user => user.id)}</li>
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map(user => <tr key={user.id}><th>{user.name}</th><th>{user.email}</th></tr>)}
+          </tbody>
+        </table>
+            
+       
     </>
   )
 }

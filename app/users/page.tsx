@@ -1,21 +1,23 @@
 import React from 'react'
+import UserTable from './UserTable'
 
-interface User {
-    id: number,
-    name: string,
-    email: string
-}
+// interface User {
+//     id: number,
+//     name: string,
+//     email: string
+// }
 
 const UsersPage = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
-    const users: User[] = await res.json();
+    // const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    // const users: User[] = await res.json();
 
 
   return (
     <>
         <h1>Users</h1>
         <p>Last rendered: {new Date().toLocaleTimeString()}</p>
-        <table className='table table-bordered'>
+        <UserTable/>
+        {/* <table className='table table-bordered'>
           <thead>
             <tr>
               <th>Name</th>
@@ -25,7 +27,7 @@ const UsersPage = async () => {
           <tbody>
             {users.map(user => <tr key={user.id}><td>{user.name}</td><td>{user.email}</td></tr>)}
           </tbody>
-        </table>
+        </table> */}
     </>
   )
 }

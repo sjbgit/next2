@@ -7,11 +7,17 @@ import UserTable from './UserTable'
 //     email: string
 // }
 
-const UsersPage = async () => {
+interface Props {
+  searchParams: { sortOrder: string }
+}
+
+
+const UsersPage = async ({ searchParams: { sortOrder }}: Props) => {
     // const res = await fetch('https://jsonplaceholder.typicode.com/users');
     // const users: User[] = await res.json();
 
-
+    console.log(sortOrder)  
+ 
   return (
     <>
         <h1>Users</h1>

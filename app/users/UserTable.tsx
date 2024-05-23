@@ -30,7 +30,7 @@ const UserTable = async () => {
       console.log(users.sort(sort))
     }
 
-    output(); 
+    //output(); 
     
   return (
     <table className='table table-bordered'>

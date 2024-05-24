@@ -1,3 +1,4 @@
+import Link from '@/node_modules/next/link'
 import React from 'react'
 import UserTable from './UserTable'
 
@@ -14,6 +15,7 @@ const UsersPage = async ({ searchParams: { sortOrder }}: Props) => {
     <>
         <h1>Users</h1>
         <p>Last rendered: {new Date().toLocaleTimeString()}</p>
+        <Link href="/users/new" className='btn'>New User</Link>
         <UserTable sortOrder={sortOrder}/>
     </>
   )

@@ -15,14 +15,14 @@ interface Props {
 const UsersPage = async ({ searchParams: { sortOrder }}: Props) => {
     // const res = await fetch('https://jsonplaceholder.typicode.com/users');
     // const users: User[] = await res.json();
-
-    console.log(sortOrder)  
+    
+    console.log('sort order in users page: ' + sortOrder)  
  
   return (
     <>
         <h1>Users</h1>
         <p>Last rendered: {new Date().toLocaleTimeString()}</p>
-        <UserTable/>
+        <UserTable sortOrder={sortOrder}/>
         {/* <table className='table table-bordered'>
           <thead>
             <tr>

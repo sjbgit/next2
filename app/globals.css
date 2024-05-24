@@ -19,7 +19,7 @@
 body {
    color: rgb(var(--foreground-rgb));
   
-  padding: 1rem;
+  /* padding: 1rem; */
    /*
    background: linear-gradient(
       to bottom,
@@ -27,4 +27,31 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
+}
+
+@layer base {
+  h1 {
+    @apply font-bold mb-3;
+  }
+}
+
+
+ /* CSS for the navigation bar */
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.company-name {
+  margin-left: 10px;
+}
+
+.navbar-buttons {
+  margin-right: 10px;
+}
+
+.navbar-buttons button {
+  margin-left: 5px;
 }

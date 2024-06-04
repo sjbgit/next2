@@ -18,3 +18,8 @@ export function GET(request: NextRequest, { params }: { params: { id: number} })
     
     //return NextResponse.json([{id: 1, name: 'mosh'}, { id: 2, name: 'seth'}])
 }
+
+export async function POST(request: NextRequest) {
+    const body = await request.json()
+    return NextResponse.json(body)
+}

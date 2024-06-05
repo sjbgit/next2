@@ -1,0 +1,7 @@
+POST https://next2-lemon.vercel.app/api/users HTTP/1.1
+Content-Type: "application/json"
+
+{
+  "name": "seth",
+  "id": 1
+}

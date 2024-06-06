@@ -19,7 +19,20 @@ export function GET(request: NextRequest, { params }: { params: { id: number} })
     //return NextResponse.json([{id: 1, name: 'mosh'}, { id: 2, name: 'seth'}])
 }
 
-export async function POST(request: NextRequest) {
+// export async function POST(request: NextRequest, { params }: { params: { id: number} }) {
+//     const body = await request.json()
+//     return NextResponse.json(body)
+// }
+
+export async function PUT(request: NextRequest,
+    { params }: { params: { id: number} }) {
     const body = await request.json()
-    return NextResponse.json(body)
+    if (!body.name) {
+        return NextResponse.json({error: 'name is required'}, {status: 400})
+    }
+
+    if (params.id > 10) {
+        return NextResponse.json({error: 'User not found - PUT'}, {status: 404})
+    }
+    return NextResponse.json({ "id": 1, "name": body.name + ' - test PUT'}, {status: 201})
 }

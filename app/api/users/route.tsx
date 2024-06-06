@@ -9,5 +9,5 @@ export async function POST(request: NextRequest) {
     if (!body.name) {
         return NextResponse.json({error: 'name is required'}, {status: 400})
     }
-    return NextResponse.json({ "id": 1, "name": body.name + ' - test'}, {status: 201})
+    return NextResponse.json({ "id": 1, "name": body.name + ' - test POST'}, {status: 201})
 }

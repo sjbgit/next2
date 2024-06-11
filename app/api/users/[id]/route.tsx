@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "@/node_modules/next/server";
+import schema from '../schema';
 
 interface Props {
     params: { id: number }
@@ -27,8 +28,10 @@ export function GET(request: NextRequest, { params }: { params: { id: number} })
 export async function PUT(request: NextRequest,
     { params }: { params: { id: number} }) {
     const body = await request.json()
-    if (!body.name) {
-        return NextResponse.json({error: 'name is required'}, {status: 400})
+    const validation = schema.safeParse(body);
+
+    if (!validation.success) {
+        return NextResponse.json({error: validation.error.errors}, {status: 400})
     }
 
     if (params.id > 10) {
